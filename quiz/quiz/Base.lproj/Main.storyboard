@@ -103,7 +103,7 @@
         <!--View Controller-->
         <scene sceneID="NkP-pp-emT">
             <objects>
-                <viewController id="6Ie-A9-uRR" sceneMemberID="viewController">
+                <viewController id="6Ie-A9-uRR" customClass="ViewController" customModule="quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="185-3D-32Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
