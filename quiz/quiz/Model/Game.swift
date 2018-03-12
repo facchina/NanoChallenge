@@ -6,17 +6,17 @@
 //  Copyright © 2018 MARIANA FACCHINA. All rights reserved.
 //
 
-import Foundation
-
-class Categoria {
+class Game {
     let respostaCorreta : String
-    var alternativas = Set<String>()
-    var dicas = Set<String>()
+    var alternativas = Array<String>()
+    var dicas = Array<String>()
     
-    init(respostaCorreta: String, alternativas: Set<String>, dicas: Set<String>) {
+    init(_ respostaCorreta: String, _ alternativas: Array<String>, _ dicas: Array<String>) {
         self.respostaCorreta = respostaCorreta
         self.alternativas = alternativas
         self.dicas = dicas
     }
+    
+    
 
 }

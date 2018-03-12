@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6En-ag-JwF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hjw-eq-kUM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Menu View Controller-->
         <scene sceneID="bGC-Qi-0dM">
             <objects>
-                <viewController id="6En-ag-JwF" sceneMemberID="viewController">
+                <viewController id="6En-ag-JwF" customClass="MenuViewController" customModule="quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RhC-qG-KHD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,22 +23,23 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="PsZ-75-NzU"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="playGame" id="PsZ-75-NzU"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="bQM-Ag-rJe"/>
                     </view>
+                    <navigationItem key="navigationItem" id="cqK-Kt-KNb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ErA-BF-XRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-519" y="116"/>
+            <point key="canvasLocation" x="-327" y="116"/>
         </scene>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="quiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,17 +97,24 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="alternativa1" destination="55Z-6G-Bcd" id="kWK-Iv-dLO"/>
+                        <outlet property="alternativa2" destination="0ax-He-y5A" id="9Up-Ng-vjT"/>
+                        <outlet property="alternativa3" destination="mQN-4z-8NI" id="NIk-mw-AoT"/>
+                        <outlet property="alternativa4" destination="22h-We-eTQ" id="5PX-5e-sAs"/>
+                        <outlet property="alternativa5" destination="hi7-zH-Ad2" id="rN8-62-o9H"/>
+                        <outlet property="dica" destination="mcM-de-ZjJ" id="3yR-C0-ed2"/>
                         <outlet property="progressView" destination="EVI-Ne-axG" id="yqc-sm-BiC"/>
+                        <segue destination="6Ie-A9-uRR" kind="show" identifier="score" id="RJm-Qa-3AF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="250" y="116"/>
+            <point key="canvasLocation" x="543" y="116"/>
         </scene>
-        <!--View Controller-->
+        <!--Score View Controller-->
         <scene sceneID="NkP-pp-emT">
             <objects>
-                <viewController id="6Ie-A9-uRR" sceneMemberID="viewController">
+                <viewController id="6Ie-A9-uRR" customClass="ScoreViewController" customModule="quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="185-3D-32Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,7 +124,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Jogar Again"/>
                                 <connections>
-                                    <segue destination="6En-ag-JwF" kind="show" id="POb-qF-wmm"/>
+                                    <segue destination="hjw-eq-kUM" kind="show" identifier="playAgain" id="POb-qF-wmm"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08j-U9-gkx">
@@ -133,7 +141,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qam-SR-B9G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1018" y="116"/>
+            <point key="canvasLocation" x="1356" y="115.59220389805098"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lHa-WQ-jMY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hjw-eq-kUM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ylb-az-Mj0">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6En-ag-JwF" kind="relationship" relationship="rootViewController" id="P0d-4r-hLU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8p1-Nu-p3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1092" y="116"/>
         </scene>
     </scenes>
 </document>
