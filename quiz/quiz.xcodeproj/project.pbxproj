@@ -91,6 +91,7 @@
 				E84C1D742053294F00737DD0 /* GameViewController.swift */,
 				9A8F4FED20570E62004444E1 /* MenuViewController.swift */,
 				9A8F4FEF20570ED5004444E1 /* ScoreViewController.swift */,
+				E80630B22057239700F8261A /* UIView+Extension.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -169,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A8F4FF020570ED5004444E1 /* ScoreViewController.swift in Sources */,
+				E80630B32057239700F8261A /* UIView+Extension.swift in Sources */,
 				E84C1D752053294F00737DD0 /* GameViewController.swift in Sources */,
 				9A16B5C220530D0400A53A71 /* ViewController.swift in Sources */,
 				9A16B5C020530D0400A53A71 /* AppDelegate.swift in Sources */,
