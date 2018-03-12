@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="W8l-4F-Ka0"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="PsZ-75-NzU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -87,7 +87,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EVI-Ne-axG">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="EVI-Ne-axG">
                                 <rect key="frame" x="92" y="195" width="191" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
@@ -95,6 +95,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="progressView" destination="EVI-Ne-axG" id="yqc-sm-BiC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -103,7 +106,7 @@
         <!--View Controller-->
         <scene sceneID="NkP-pp-emT">
             <objects>
-                <viewController id="6Ie-A9-uRR" customClass="ViewController" customModule="quiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6Ie-A9-uRR" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="185-3D-32Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -12,6 +12,9 @@
 		9A16B5C520530D0400A53A71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A16B5C320530D0400A53A71 /* Main.storyboard */; };
 		9A16B5C720530D0400A53A71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A16B5C620530D0400A53A71 /* Assets.xcassets */; };
 		9A16B5CA20530D0400A53A71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A16B5C820530D0400A53A71 /* LaunchScreen.storyboard */; };
+		E84C1D702053262A00737DD0 /* Categoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84C1D6F2053262A00737DD0 /* Categoria.swift */; };
+		E84C1D732053275300737DD0 /* Jogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84C1D722053275300737DD0 /* Jogo.swift */; };
+		E84C1D752053294F00737DD0 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84C1D742053294F00737DD0 /* GameController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		9A16B5C620530D0400A53A71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A16B5C920530D0400A53A71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A16B5CB20530D0400A53A71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E84C1D6F2053262A00737DD0 /* Categoria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categoria.swift; sourceTree = "<group>"; };
+		E84C1D722053275300737DD0 /* Jogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jogo.swift; sourceTree = "<group>"; };
+		E84C1D742053294F00737DD0 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,33 @@
 		9A16B5BE20530D0400A53A71 /* quiz */ = {
 			isa = PBXGroup;
 			children = (
+				E84C1D762053295400737DD0 /* Controller */,
+				E84C1D712053272100737DD0 /* Model */,
 				9A16B5BF20530D0400A53A71 /* AppDelegate.swift */,
-				9A16B5C120530D0400A53A71 /* ViewController.swift */,
 				9A16B5C320530D0400A53A71 /* Main.storyboard */,
 				9A16B5C620530D0400A53A71 /* Assets.xcassets */,
 				9A16B5C820530D0400A53A71 /* LaunchScreen.storyboard */,
 				9A16B5CB20530D0400A53A71 /* Info.plist */,
 			);
 			path = quiz;
+			sourceTree = "<group>";
+		};
+		E84C1D712053272100737DD0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E84C1D6F2053262A00737DD0 /* Categoria.swift */,
+				E84C1D722053275300737DD0 /* Jogo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E84C1D762053295400737DD0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9A16B5C120530D0400A53A71 /* ViewController.swift */,
+				E84C1D742053294F00737DD0 /* GameController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +161,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E84C1D732053275300737DD0 /* Jogo.swift in Sources */,
+				E84C1D752053294F00737DD0 /* GameController.swift in Sources */,
 				9A16B5C220530D0400A53A71 /* ViewController.swift in Sources */,
 				9A16B5C020530D0400A53A71 /* AppDelegate.swift in Sources */,
+				E84C1D702053262A00737DD0 /* Categoria.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +304,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = quiz/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ada.quiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -290,6 +319,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = quiz/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ada.quiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
