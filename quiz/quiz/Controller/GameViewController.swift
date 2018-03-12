@@ -18,41 +18,63 @@ class GameViewController : UIViewController{
                                Game("The legend of Zelda: Breath of the wild", ["The legend of Zelda: Breath of the wild", "PUBG", "Horizon: Zero dawn", "Shadow of the Colossus", "Worms"], ["Open-World", "Horse", "Hero", "Rupee"])]
     
     let qtdAlternativas = 5
+    let qtdDicas = 4
     let qtdGames = 7
+    var count : Float = 1.0
+    var dicaAtual = 0
+    var levelAtual = 0
     
     @IBOutlet weak var alternativa1 : UIButton!
     @IBOutlet weak var alternativa2 : UIButton!
     @IBOutlet weak var alternativa3 : UIButton!
     @IBOutlet weak var alternativa4 : UIButton!
     @IBOutlet weak var alternativa5 : UIButton!
-    
-    @IBOutlet weak var progressView: UIProgressView!
-    var timer = Timer()
-    
     @IBOutlet var dica : UILabel!
+    @IBOutlet weak var progressView: UIProgressView!
+    
+    var timer = Timer()
+    var jogoAtual : Game!
+    
     
     override func viewDidLoad() {
         
-        super.viewDidLoad()
+        print("Load Datas")
         
+        super.viewDidLoad()
         timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(Start), userInfo: nil, repeats: true)
         
-        
-        var levelAtual = 0
+  
         let jogosAleatorios = EmbaralharJogos()
-        var jogoAtual = jogosAleatorios[levelAtual]
+        jogoAtual = jogosAleatorios[levelAtual]
         var alternativasAleatorias = EmbaralharAlternativas(levelAtual: levelAtual, jogos_aleatorios: jogosAleatorios)
         
+        dica.text = jogoAtual.dicas[dicaAtual]
         alternativa1.setTitle(alternativasAleatorias[0], for: .normal)
         alternativa2.setTitle(alternativasAleatorias[1], for: .normal)
         alternativa3.setTitle(alternativasAleatorias[2], for: .normal)
         alternativa4.setTitle(alternativasAleatorias[3], for: .normal)
         alternativa5.setTitle(alternativasAleatorias[4], for: .normal)
         
+        
+    }
+    
+    func NextTip(){
+        dicaAtual += 1
+        if dicaAtual < qtdDicas{
+            count = 1
+            
+            dica.text = jogoAtual.dicas[dicaAtual]
+        }
     }
     
     @objc func Start(){
-        progressView.setProgress(progressView.progress - 0.1, animated: false)
+        if count >= 0{
+            count -= 0.1
+            progressView.setProgress(count, animated: false)
+        }
+        else{
+            NextTip()
+        }
     }
     
     func EmbaralharAlternativas(levelAtual: Int, jogos_aleatorios: Array<Game>) -> Array<String>{
