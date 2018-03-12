@@ -15,6 +15,10 @@
 		E84C1D702053262A00737DD0 /* Categoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84C1D6F2053262A00737DD0 /* Categoria.swift */; };
 		E84C1D732053275300737DD0 /* Jogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84C1D722053275300737DD0 /* Jogo.swift */; };
 		E84C1D752053294F00737DD0 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84C1D742053294F00737DD0 /* GameController.swift */; };
+		E8B10F0A2056FA0F00EE3AE4 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B10F092056FA0F00EE3AE4 /* Gradient.swift */; };
+		E8B10F11205701F800EE3AE4 /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8B10F0E205701EE00EE3AE4 /* Montserrat-ExtraBold.ttf */; };
+		E8B10F12205701FA00EE3AE4 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8B10F0F205701EE00EE3AE4 /* Montserrat-Light.ttf */; };
+		E8B10F13205701FC00EE3AE4 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8B10F10205701EE00EE3AE4 /* Montserrat-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		E84C1D6F2053262A00737DD0 /* Categoria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categoria.swift; sourceTree = "<group>"; };
 		E84C1D722053275300737DD0 /* Jogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jogo.swift; sourceTree = "<group>"; };
 		E84C1D742053294F00737DD0 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		E8B10F092056FA0F00EE3AE4 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
+		E8B10F0E205701EE00EE3AE4 /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		E8B10F0F205701EE00EE3AE4 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		E8B10F10205701EE00EE3AE4 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,7 @@
 		9A16B5BE20530D0400A53A71 /* quiz */ = {
 			isa = PBXGroup;
 			children = (
+				E8B10F0D205701EE00EE3AE4 /* Montserrat */,
 				E84C1D762053295400737DD0 /* Controller */,
 				E84C1D712053272100737DD0 /* Model */,
 				9A16B5BF20530D0400A53A71 /* AppDelegate.swift */,
@@ -85,8 +94,19 @@
 			children = (
 				9A16B5C120530D0400A53A71 /* ViewController.swift */,
 				E84C1D742053294F00737DD0 /* GameController.swift */,
+				E8B10F092056FA0F00EE3AE4 /* Gradient.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		E8B10F0D205701EE00EE3AE4 /* Montserrat */ = {
+			isa = PBXGroup;
+			children = (
+				E8B10F0E205701EE00EE3AE4 /* Montserrat-ExtraBold.ttf */,
+				E8B10F0F205701EE00EE3AE4 /* Montserrat-Light.ttf */,
+				E8B10F10205701EE00EE3AE4 /* Montserrat-Regular.ttf */,
+			);
+			path = Montserrat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,7 +168,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8B10F13205701FC00EE3AE4 /* Montserrat-Regular.ttf in Resources */,
+				E8B10F12205701FA00EE3AE4 /* Montserrat-Light.ttf in Resources */,
 				9A16B5CA20530D0400A53A71 /* LaunchScreen.storyboard in Resources */,
+				E8B10F11205701F800EE3AE4 /* Montserrat-ExtraBold.ttf in Resources */,
 				9A16B5C720530D0400A53A71 /* Assets.xcassets in Resources */,
 				9A16B5C520530D0400A53A71 /* Main.storyboard in Resources */,
 			);
@@ -166,6 +189,7 @@
 				9A16B5C220530D0400A53A71 /* ViewController.swift in Sources */,
 				9A16B5C020530D0400A53A71 /* AppDelegate.swift in Sources */,
 				E84C1D702053262A00737DD0 /* Categoria.swift in Sources */,
+				E8B10F0A2056FA0F00EE3AE4 /* Gradient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

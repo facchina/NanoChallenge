@@ -18,5 +18,4 @@ class Categoria {
         self.alternativas = alternativas
         self.dicas = dicas
     }
-
 }
