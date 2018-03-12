@@ -62,6 +62,7 @@
 		9A16B5BE20530D0400A53A71 /* quiz */ = {
 			isa = PBXGroup;
 			children = (
+				E8B10F0D205701EE00EE3AE4 /* Montserrat */,
 				E84C1D762053295400737DD0 /* Controller */,
 				E84C1D712053272100737DD0 /* Model */,
 				9A16B5BF20530D0400A53A71 /* AppDelegate.swift */,
@@ -90,6 +91,16 @@
 				9A8F4FEF20570ED5004444E1 /* ScoreViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		E8B10F0D205701EE00EE3AE4 /* Montserrat */ = {
+			isa = PBXGroup;
+			children = (
+				E8B10F0E205701EE00EE3AE4 /* Montserrat-ExtraBold.ttf */,
+				E8B10F0F205701EE00EE3AE4 /* Montserrat-Light.ttf */,
+				E8B10F10205701EE00EE3AE4 /* Montserrat-Regular.ttf */,
+			);
+			path = Montserrat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,7 +162,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8B10F13205701FC00EE3AE4 /* Montserrat-Regular.ttf in Resources */,
+				E8B10F12205701FA00EE3AE4 /* Montserrat-Light.ttf in Resources */,
 				9A16B5CA20530D0400A53A71 /* LaunchScreen.storyboard in Resources */,
+				E8B10F11205701F800EE3AE4 /* Montserrat-ExtraBold.ttf in Resources */,
 				9A16B5C720530D0400A53A71 /* Assets.xcassets in Resources */,
 				9A16B5C520530D0400A53A71 /* Main.storyboard in Resources */,
 			);
