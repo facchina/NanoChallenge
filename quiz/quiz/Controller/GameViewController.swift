@@ -11,11 +11,11 @@ class GameViewController : UIViewController{
     
     var games : Array<Game> = [Game("Portal", ["Portal", "Q.U.B.E", "The Talos Principle", "Fez", "Transistor"],  ["Puzzle", "Futuristic", "First-Person", "Cake"]),
                                Game("Dark Souls", ["Dark Souls", "Skyrim", "Bloodborne", "Assasin's Creed", "God of War"], ["RPG", "Medieval", "Hard", "Bonfire"]),
-                               Game("PUBG", ["PUBG", "Fortnite", "Grand Theft Auto", "Left 4 dead", "DayZ"], ["Open-World", "Loot", "Battle Royale", "Pan"]),
-                               Game("Life is strange", ["Life is strange","Prince of Persia", "The walking dead", "Beyon Two Souls", "Chrono Trigger"], ["Time", "Choices matter", "Episodic", "Photography"]),
+                               Game("PUBG", ["PUBG", "Fortnite", "Grand Theft Auto", "Left 4 Dead", "DayZ"], ["Open-World", "Loot", "Battle Royale", "Pan"]),
+                               Game("Life is strange", ["Life is Strange","Prince of Persia", "The Walking Dead", "Beyond Two Souls", "Chrono Trigger"], ["Time", "Choices Matter", "Episodic", "Photography"]),
                                Game("Persona", ["Persona", "Rocket League", "Bravely Default", "Final Fantasy XV", "Tokyo Mirage Sessions"], ["Turn Based", "JRPG", "Daily life", "Phantom Thieves"]),
-                               Game("Bioshock", ["Bioshock", "Gears of War", "Fallout", "SystemShock", "Deus ex"], ["FPS", "Immersive sim", "Utopia", "Underwater"]),
-                               Game("The legend of Zelda: Breath of the wild", ["The legend of Zelda: Breath of the wild", "PUBG", "Horizon: Zero dawn", "Shadow of the Colossus", "Worms"], ["Open-World", "Horse", "Hero", "Rupee"])]
+                               Game("Bioshock", ["Bioshock", "Gears of War", "Fallout", "SystemShock", "Deus ex"], ["FPS", "Immersive Sim", "Utopia", "Underwater"]),
+                               Game("Zelda: Breath of the Wild", ["Zelda: Breath of the Wild", "PUBG", "Horizon: Zero Dawn", "Shadow of the Colossus", "Worms"], ["Open-World", "Horse", "Hero", "Rupee"])]
     
     let qtdAlternativas = 5
     let qtdDicas = 4
@@ -34,7 +34,6 @@ class GameViewController : UIViewController{
     
     var timer = Timer()
     var jogoAtual : Game!
-    
     
     override func viewDidLoad() {
         
@@ -55,8 +54,7 @@ class GameViewController : UIViewController{
         alternativa4.setTitle(alternativasAleatorias[3], for: .normal)
         alternativa5.setTitle(alternativasAleatorias[4], for: .normal)
         progressView.transform = CGAffineTransform(scaleX: 1, y: 2.5)
-        
-        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

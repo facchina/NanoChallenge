@@ -21,4 +21,8 @@ class ScoreViewController : UIViewController {
         self.navigationController?.isNavigationBarHidden = true
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
 }
