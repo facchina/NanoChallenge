@@ -42,7 +42,7 @@ class GameViewController : UIViewController{
         
         super.viewDidLoad()
         timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(Start), userInfo: nil, repeats: true)
-        
+        view.setGradientBackground(colorOne: UIColor(red: 58.0/255.0, green: 68.0/255.0, blue: 103.0/255.0, alpha: 1.0), colorTwo: UIColor(red: 41.0/255.0, green: 49.0/255.0, blue: 76.0/255.0, alpha: 1.0))
   
         let jogosAleatorios = EmbaralharJogos()
         jogoAtual = jogosAleatorios[levelAtual]
@@ -54,8 +54,13 @@ class GameViewController : UIViewController{
         alternativa3.setTitle(alternativasAleatorias[2], for: .normal)
         alternativa4.setTitle(alternativasAleatorias[3], for: .normal)
         alternativa5.setTitle(alternativasAleatorias[4], for: .normal)
+        progressView.transform = CGAffineTransform(scaleX: 1, y: 2.5)
         
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
     }
     
     func NextTip(){
