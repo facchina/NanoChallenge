@@ -10,6 +10,33 @@ import UIKit
 
 class MenuViewController : UIViewController{
 
+    @IBOutlet weak var easyButton: UIButton!
+    
+    @IBOutlet weak var hardButton: UIButton!
+    var dificuldadeInt = 1
+    @IBAction func selecionarDificuldade(_ sender: UIButton) {
+        if let dificuldade = sender.titleLabel?.text?.uppercased(){
+            if dificuldade == "EASY"{
+                dificuldadeInt = 1
+            }
+            else{
+                dificuldadeInt = 2
+            }
+        }
+//        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
+//        secondViewController.dificuldade = dificuldadeInt
+        
+        print(dificuldadeInt)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "play"{
+            let gvc = segue.destination as! GameViewController
+            gvc.dificuldade = dificuldadeInt
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

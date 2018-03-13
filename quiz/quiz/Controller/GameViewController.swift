@@ -27,8 +27,9 @@ class GameViewController : UIViewController{
                                Game("The legend of Zelda: Breath of the wild", ["The legend of Zelda: Breath of the wild", "PUBG", "Horizon: Zero dawn", "Shadow of the Colossus", "Worms"], ["Open-World", "Horse", "Hero", "Rupee"])]
     // CONSTANTES
     let qtdAlternativas = 5
-    let qtdDicas = 4
+    var qtdDicas = 4
     let qtdGames = 7
+    var decremento_tempo: Float = 0.1
     
     // VARIAVEIS DE CONTROLE
     var count:Float = 1.0
@@ -36,6 +37,7 @@ class GameViewController : UIViewController{
     var levelAtual = 0
     var qtdErros = 0
     var pontuacao:Double = 0
+    var dificuldade = 1
     
     var timer = Timer()
     var jogosAleatorios = Array<Game>()
@@ -45,6 +47,14 @@ class GameViewController : UIViewController{
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        if dificuldade == 1{
+            qtdDicas = 4
+        }else{
+            qtdDicas = 2
+        }
+        print(dificuldade)
+        print(qtdDicas)
+        numero_dica.text = "\(dicaAtual+1)/\(qtdDicas)"
         timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(start), userInfo: nil, repeats: true)
         jogosAleatorios = embaralharJogos()
         refresh()
@@ -53,26 +63,29 @@ class GameViewController : UIViewController{
     @IBAction func verificarAcerto(_ sender: UIButton) {
         if let text = sender.titleLabel!.text{
             if text == jogoAtual.respostaCorreta{
-                calcularPontuacao()
-                levelAtual += 1
-                if levelAtual < qtdGames{
-                    refresh()
-                } else{
-                    nextView()
-                }
+                nextLevel()
             }else{
                 qtdErros += 1
             }
         }
     }
-    
-    func nextView(){
+    func nextLevel (){
+        calcularPontuacao()
+        levelAtual += 1
+        if levelAtual < qtdGames{
+            refresh()
+        } else{
+            gameOver()
+        }
+    }
+    func gameOver(){
         let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "ScoreViewController") as! ScoreViewController
         self.navigationController?.pushViewController(secondViewController, animated: true)
         secondViewController.score = pontuacao
     }
     
    func refresh(){
+        qtdErros = 0
         count = 1
         dicaAtual = 0
         // Pega um fase nova
@@ -102,16 +115,21 @@ class GameViewController : UIViewController{
             // atualiza o storyboard
             dica.text = jogoAtual.dicas[dicaAtual]
             numero_dica.text = "\(dicaAtual+1)/\(qtdDicas)"
+        }else if dificuldade == 2{
+            qtdErros += 5
+            nextLevel()
         }
         
     }
     
     @objc func start(){
-        if count >= 0{
-            count -= 0.1
-            progressView.setProgress(count, animated: false)
-        } else{
-            nextTip()
+        if levelAtual < qtdGames{
+            if count >= 0{
+                count = count - decremento_tempo
+                progressView.setProgress(count, animated: false)
+            } else{
+                nextTip()
+            }
         }
     }
     
@@ -148,8 +166,10 @@ class GameViewController : UIViewController{
     func calcularPontuacao() {
         let pontuacaoMax  = 10 * Double(levelAtual+1)
         print("Pontuacao Max: ", pontuacaoMax)
+        
+        let porcentagem = 0.1 * Double (dificuldade)
         // subtrai da pontuacao maxima 20% por cada erro
-        let penalidade = pontuacaoMax * 0.2 * Double(qtdErros)
+        let penalidade = pontuacaoMax * porcentagem * Double(qtdErros)
         print("Penalidade: ", penalidade)
         pontuacao = pontuacaoMax - penalidade
 
