@@ -146,7 +146,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="pressHard:" destination="6En-ag-JwF" eventType="touchUpInside" id="pYj-rJ-qRH"/>
                                     <segue destination="6Ie-A9-uRR" kind="show" id="pz3-js-Up5"/>
                                 </connections>
                             </button>
@@ -255,7 +254,7 @@
                                 </constraints>
                             </imageView>
                             <progressView opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="EVI-Ne-axG">
-                                <rect key="frame" x="31.5" y="235.5" width="312" height="3"/>
+                                <rect key="frame" x="31.5" y="236" width="312" height="3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="3" id="bAW-qT-Ea5"/>
                                     <constraint firstAttribute="width" constant="312" id="e0U-9u-CDF"/>
@@ -648,6 +647,6 @@
         <image name="spiral" width="1196" height="1221"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RJm-Qa-3AF"/>
+        <segue reference="pz3-js-Up5"/>
     </inferredMetricsTieBreakers>
 </document>
