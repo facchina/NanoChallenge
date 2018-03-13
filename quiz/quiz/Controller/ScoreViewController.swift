@@ -20,16 +20,5 @@ class ScoreViewController : UIViewController {
         print("score ", score)
         scoreLabel.text = String(score)
     }
-    
-    @IBAction func playAgain(_ sender: UIButton) {
-        
-        print("entrou")
-        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
-        self.navigationController?.pushViewController(secondViewController, animated: true)
-        
-        
-        secondViewController.pontuacao = 0
-        
-        
-    }
+
 }

@@ -53,7 +53,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="2XM-TC-RzV"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="play" id="2XM-TC-RzV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6W-qC-GAQ">
@@ -66,16 +66,6 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ysz-rU-Tjp">
-                                <rect key="frame" x="64" y="427" width="106" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="28"/>
-                                <size key="titleShadowOffset" width="0.0" height="6"/>
-                                <state key="normal" title="Easy">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQD-95-2AN">
                                 <rect key="frame" x="205" y="439" width="106" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -83,16 +73,6 @@
                                 <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="22"/>
                                 <size key="titleShadowOffset" width="0.0" height="6"/>
                                 <state key="normal">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJ1-WY-WIa">
-                                <rect key="frame" x="205" y="427" width="106" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="28"/>
-                                <size key="titleShadowOffset" width="0.0" height="6"/>
-                                <state key="normal" title="Hard">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
@@ -110,11 +90,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00L-G8-dUJ">
+                                <rect key="frame" x="101" y="439" width="33" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Easy"/>
+                                <connections>
+                                    <action selector="selecionarDificuldade:" destination="6En-ag-JwF" eventType="touchUpInside" id="lzf-gR-MTB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mtg-hZ-Uhl">
+                                <rect key="frame" x="241" y="439" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Hard"/>
+                                <connections>
+                                    <action selector="selecionarDificuldade:" destination="6En-ag-JwF" eventType="touchUpInside" id="pe7-aS-Tq1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="bQM-Ag-rJe"/>
                     </view>
                     <navigationItem key="navigationItem" id="cqK-Kt-KNb"/>
+                    <connections>
+                        <outlet property="easyButton" destination="00L-G8-dUJ" id="guz-Ol-A4m"/>
+                        <outlet property="hardButton" destination="Mtg-hZ-Uhl" id="LIS-NC-1M3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ErA-BF-XRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -330,16 +330,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLg-qW-f5j">
-                                <rect key="frame" x="55" y="547" width="264" height="40"/>
+                                <rect key="frame" x="55" y="544" width="264" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="28"/>
                                 <size key="titleShadowOffset" width="0.0" height="6"/>
-                                <state key="normal" title="Play">
+                                <state key="normal" title="Play Again">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="playAgain:" destination="6Ie-A9-uRR" eventType="touchUpInside" id="ggq-Ya-4PO"/>
+                                    <segue destination="6En-ag-JwF" kind="show" id="bMV-oW-esI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -347,7 +347,6 @@
                         <viewLayoutGuide key="safeArea" id="Cwm-vq-hsP"/>
                     </view>
                     <connections>
-                        <outlet property="againButton" destination="HLg-qW-f5j" id="Knt-Om-r7n"/>
                         <outlet property="scoreLabel" destination="dXV-nI-dKm" id="2MH-6H-RZS"/>
                     </connections>
                 </viewController>
@@ -379,4 +378,7 @@
         <image name="Score" width="562" height="562"/>
         <image name="player1" width="824" height="771"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="bMV-oW-esI"/>
+    </inferredMetricsTieBreakers>
 </document>
