@@ -9,12 +9,27 @@
 import UIKit
 
 class ScoreViewController : UIViewController {
+    var score:Double = 0
+    
+    @IBOutlet weak var scoreLabel: UILabel!
+   
+    @IBOutlet weak var againButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        view.setGradientBackground(colorOne: UIColor(red: 58.0/255.0, green: 68.0/255.0, blue: 103.0/255.0, alpha: 1.0), colorTwo: UIColor(red: 41.0/255.0, green: 49.0/255.0, blue: 76.0/255.0, alpha: 1.0))
-        
+        print("score ", score)
+        scoreLabel.text = String(score)
     }
     
+    @IBAction func playAgain(_ sender: UIButton) {
+        
+        print("entrou")
+        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
+        self.navigationController?.pushViewController(secondViewController, animated: true)
+        
+        
+        secondViewController.pontuacao = 0
+        
+        
+    }
 }
